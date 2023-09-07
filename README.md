@@ -26,10 +26,3 @@ A React-based YouTube clone that replicates the popular video-sharing platform's
 
 ![image](https://github.com/Aseem5047/youtube/assets/80787027/6e180514-38c8-4704-ae3a-582b4e0b0da6)
 
-
-![image](https://github.com/Aseem5047/youtube/assets/80787027/2f6489ce-b99b-4b02-b28e-54a8b35994f4)
-
-![image](https://github.com/Aseem5047/youtube/assets/80787027/cfea9bd6-761d-478b-b0a3-51dc42c87f87)
-
-![image](https://github.com/Aseem5047/youtube/assets/80787027/0db55535-1a33-428b-aa8e-9f778beb71c4)
-
