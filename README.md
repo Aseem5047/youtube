@@ -4,8 +4,6 @@ A React-based YouTube clone that replicates the popular video-sharing platform's
 
 ![image](https://github.com/Aseem5047/youtube/assets/80787027/dc5e85ff-7c00-44d7-a417-829eb24bd53a)
 
-![image](https://github.com/Aseem5047/youtube/assets/80787027/b038f9ef-ed77-40be-aeae-103f9ceabab0)
-
 ![image](https://github.com/Aseem5047/youtube/assets/80787027/68c508da-6c6f-44e6-90b5-ed1df2665f0a)
 
 # Tech Used / Features
