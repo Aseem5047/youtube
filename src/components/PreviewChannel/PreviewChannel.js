@@ -45,7 +45,7 @@ const PreviewChannel = () => {
 
     return (
         <div className="channel">
-            <img className="channel__art" src={"https://source.unsplash.com/1600x900/?nature,technology,cartoon " || "https://images-eu.ssl-images-amazon.com/images/G/31/img20/Smallappliances/Jupiter-21/Slot_16_Curated-store_Banner_PC.gif"} alt="Channel Art" />
+            <img className="channel__art" src={"https://source.unsplash.com/1600x900/?nature,technology,cartoon "} alt="Channel Art" />
 
             <div className="channel__details" style={{ marginTop: "1rem" }}>
                 <div className="channel__detailsWrap">
