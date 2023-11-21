@@ -108,7 +108,7 @@ const Header = () => {
 
               <Button
                 onClick={() => auth.signOut()}
-                onClick={() => location.reload()}
+                // onClick={() => location.reload()}
                 variant="outlined"
                 className="home__signOut"
               >

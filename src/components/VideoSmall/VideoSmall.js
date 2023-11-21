@@ -21,13 +21,12 @@ const VideoSmall = ({ channelView = false, video }) => {
         <img
           src={video.thumbnailURL}
           alt="thumbnail"
-          className={`videoSmall__thumbmail ${
-            channelView && "videoSmall__channelView__img"
-          }`}
+          className={`videoSmall__thumbmail ${channelView && "videoSmall__channelView__img"
+            }`}
         />
       </div>
 
-      <div className="videoSmall__right">
+      <div className="videoSmall__right" >
         <p className="videoSmall__title">{video.title}</p>
 
         <div className="videoSmall__texts videothumb__texts">

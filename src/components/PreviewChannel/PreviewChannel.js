@@ -17,19 +17,19 @@ const PreviewChannel = () => {
     const { videos, currentUser } = useAppContext();
 
     useEffect(() => {
-        setCurrentChannel(videos.filter((video) => video.email === channel));
+        setCurrentChannel(videos.filter((video) => video?.email === channel));
     }, [channel, videos]);
 
     const Unsubscribe = () => {
-        db.collection("users").doc(channel).update({ subscribers: firebase.firestore.FieldValue.arrayRemove(currentUser.email) })
+        db.collection("users").doc(channel).update({ subscribers: firebase.firestore.FieldValue.arrayRemove(currentUser?.email) })
 
-        db.collection("users").doc(currentUser.email).update({ subscription: firebase.firestore.FieldValue.arrayRemove(channel) })
+        db.collection("users").doc(currentUser?.email).update({ subscription: firebase.firestore.FieldValue.arrayRemove(channel) })
     }
 
     const Subscribe = () => {
-        db.collection("users").doc(currentUser.email).update({ subscribers: firebase.firestore.FieldValue.arrayUnion(currentUser.email) })
+        db.collection("users").doc(currentUser?.email).update({ subscribers: firebase.firestore.FieldValue.arrayUnion(currentUser?.email) })
 
-        db.collection("users").doc(currentUser.email).update({ subscription: firebase.firestore.FieldValue.arrayUnion(channel) })
+        db.collection("users").doc(currentUser?.email).update({ subscription: firebase.firestore.FieldValue.arrayUnion(channel) })
     }
 
     const [channelData, setChannelData] = useState({});
@@ -45,9 +45,9 @@ const PreviewChannel = () => {
 
     return (
         <div className="channel">
-            <img className="channel__art" src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Smallappliances/Jupiter-21/Slot_16_Curated-store_Banner_PC.gif" alt="Channel Art" />
+            <img className="channel__art" src={"https://source.unsplash.com/1600x900/?nature,technology,cartoon " || "https://images-eu.ssl-images-amazon.com/images/G/31/img20/Smallappliances/Jupiter-21/Slot_16_Curated-store_Banner_PC.gif"} alt="Channel Art" />
 
-            <div className="channel__details">
+            <div className="channel__details" style={{ marginTop: "1rem" }}>
                 <div className="channel__detailsWrap">
                     <div className="channel__avatarWrap">
                         <Avatar className="channel__avatar" />
@@ -55,19 +55,23 @@ const PreviewChannel = () => {
                         <div className="videothumb__channel">
                             <h1 className="channel__title">{channelData.firstName} {channelData.lastName}</h1>
 
-                            <p className="videothumb__text watch__subCount">
-                                {channelData?.subscribers?.length}{" "}{channelData?.subscribers?.length > 1 ? "Subscribers" : "0 Subscriber"}
+                            <p className="videothumb__text " style={{ marginTop: "0.25rem" }}>
+                                {channelData?.subscribers?.length}{" "}
+
+                                <span className="watch__subCount">
+                                    {channelData?.subscribers?.length > 1 ? "Subscribers" : channelData?.subscribers?.length === 1 ? "Subscriber" : "No Subscribers"}
+                                </span>
                             </p>
                         </div>
                     </div>
-                    {channelData?.subscribers?.includes(currentUser.email) ? (
+                    {channelData?.subscribers?.includes(currentUser?.email) ? (
                         <Button color="default" variant="contained" onClick={Unsubscribe}>SUBSCRIBED</Button>
                     ) : (
                         <Button
-                            className={`${currentUser.email === channel ? "watch__subBtn-disabled" : "watch__subBtn"}`}
+                            className={`${currentUser?.email === channel ? "watch__subBtn-disabled" : "watch__subBtn"}`}
                             color="primary"
                             variant="contained"
-                            disabled={currentUser.email === channel}
+                            disabled={currentUser?.email === channel}
                             onClick={Subscribe}
                         >
                             SUBSCRIBE
@@ -103,7 +107,7 @@ const PreviewChannel = () => {
                     ))}
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

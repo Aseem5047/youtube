@@ -108,7 +108,7 @@ const UploadVideo = ({ video, setVideo, handleClose }) => {
     useEffect(() => {
         if (thumbnailUploaded && videoUploaded) {
             db.collection("Videos")
-            .doc(id)
+                .doc(id)
                 .set({
                     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                     id: id,
@@ -155,7 +155,7 @@ const UploadVideo = ({ video, setVideo, handleClose }) => {
                 <TextField
                     label="Description"
                     multiline
-                    rows={10}   
+                    rows={10}
                     variant="outlined"
                     fullWidth
                     placeholder="Tell viewers about your video"
